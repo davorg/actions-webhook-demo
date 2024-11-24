@@ -37,6 +37,11 @@ $(document).ready(function() {
             }
         };
 
+        // Add headers to the request
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.setRequestHeader("Accept", "application/vnd.github.everest-preview+json");
+        xhr.setRequestHeader("Authorization", "Bearer " + githubToken);
+
         // Add the data object to the request body
         xhr.send(JSON.stringify(data));
     });
